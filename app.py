@@ -129,3 +129,31 @@ margin-top:50px;
 
 </style>
 """, unsafe_allow_html=True)
+
+
+# =====================================================
+# HERO SECTION
+# =====================================================
+
+logo = Image.open("logo.png")
+
+left, center, right = st.columns([1,2,1])
+
+with center:
+    st.image(logo, width=240)
+
+st.markdown("""
+<h1 class="title">
+Dashboard Prediksi<br>
+Status Pinjaman Nasabah
+</h1>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<p class="subtitle">
+Menggunakan Metode Random Forest
+</p>
+""", unsafe_allow_html=True)
+
+st.write("")
+st.write("")
