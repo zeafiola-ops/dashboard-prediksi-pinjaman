@@ -112,3 +112,70 @@ Menggunakan Algoritma Random Forest
 """, unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
+/* ==========================================
+   DASHBOARD PENELITIAN
+========================================== */
+
+.dashboard-card{
+
+background:white;
+border-radius:22px;
+padding:30px;
+margin-top:40px;
+margin-bottom:40px;
+
+display:flex;
+align-items:center;
+gap:30px;
+
+box-shadow:0px 8px 25px rgba(0,0,0,.12);
+
+transition:0.35s;
+
+}
+
+.dashboard-card:hover{
+
+transform:translateY(-8px) scale(1.02);
+
+box-shadow:0px 18px 40px rgba(0,0,0,.20);
+
+}
+
+.dashboard-icon{
+
+width:90px;
+height:90px;
+
+background:#0B3C78;
+
+border-radius:18px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:45px;
+
+color:white;
+
+flex-shrink:0;
+
+}
+
+.dashboard-content h2{
+
+color:#0B3C78;
+font-size:34px;
+margin-bottom:15px;
+
+}
+
+.dashboard-content p{
+
+font-size:18px;
+line-height:1.9;
+text-align:justify;
+color:#444;
+
+}
