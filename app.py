@@ -193,6 +193,8 @@ Dashboard ini menyajikan hasil prediksi status pinjaman nasabah <br>
 </p>
 
 """, unsafe_allow_html=True)
+
+""", unsafe_allow_html=True)
 st.markdown("""
 <div class="dashboard-card">
 
@@ -216,7 +218,6 @@ serta interpretasi hasil penelitian.
 </div>
 
 </div>
-""", unsafe_allow_html=True)
 /* =========================
    CARD DASHBOARD
 ========================= */
