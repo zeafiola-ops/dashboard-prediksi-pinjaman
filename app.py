@@ -135,13 +135,28 @@ margin-top:50px;
 # HERO SECTION
 # =====================================================
 
+from PIL import Image
+import base64
+
+# ==============================
+# LOGO TENGAH
+# ==============================
+
 logo = Image.open("logo.png")
 
-left, center, right = st.columns([1,2,1])
+def get_base64(img_path):
+    with open(img_path, "rb") as f:
+        return base64.b64encode(f.read()).decode()
 
-with center:
-    st.image(logo, width=240)
+logo_base64 = get_base64("logo.png")
 
+st.markdown(f"""
+<div class="logo-container">
+
+<img src="data:image/png;base64,{logo_base64}" class="logo">
+
+</div>
+""", unsafe_allow_html=True)
 st.markdown("""
 <h1 class="title">
 Dashboard Prediksi<br>
