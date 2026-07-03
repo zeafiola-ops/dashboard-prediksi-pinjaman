@@ -181,14 +181,14 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 st.markdown("""
 <h1 class="title">
-Dashboard Prediksi<br>
-Status Pinjaman Nasabah
+DASHBOARD PREDIKSI<br>
+     PINJAMAN 
 </h1>
 """, unsafe_allow_html=True)
 
 st.markdown("""
 <p class="subtitle">
-Menggunakan Metode Random Forest
+Metode Random Forest
 </p>
 """, unsafe_allow_html=True)
 
