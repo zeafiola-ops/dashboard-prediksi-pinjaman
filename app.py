@@ -137,6 +137,19 @@ color:#666;
 </style>
 
 """,unsafe_allow_html=True)
+st.markdown("""
+<style>
+
+/* Hero */
+
+.hero{
+...
+}
+
+.hero p{
+font-size:24px;
+color:#666;
+}
 /* =========================
 CARD DASHBOARD
 ========================= */
