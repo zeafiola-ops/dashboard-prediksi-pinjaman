@@ -6,7 +6,7 @@ from PIL import Image
 # ==========================
 
 st.set_page_config(
-    page_title="Dashboard Prediksi Pinjaman  Metode Random Forest",
+    page_title="DASHBOARD PREDIKSI PINJAMAN  METODE RANDOM FOREST",
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded"
