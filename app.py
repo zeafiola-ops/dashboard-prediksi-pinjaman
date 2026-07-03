@@ -1,125 +1,616 @@
 import streamlit as st
+from PIL import Image
+import base64
 
-# =========================
-# KONFIGURASI HALAMAN
-# =========================
 st.set_page_config(
     page_title="Dashboard Prediksi Status Pinjaman Nasabah",
     page_icon="📊",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
-# =========================
-# CSS
-# =========================
-st.markdown("""
-<style>
+# ==========================
+# Load CSS
+# ==========================
+def load_css():
+    with open("style.css") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+load_css()
+
+# ==========================
+# Sidebar
+# ==========================
+
+st.sidebar.title("Dashboard")
+
+menu = st.sidebar.radio(
+    "Menu",
+    [
+        "Home",
+        "Dataset",
+        "Visualisasi",
+        "Prediksi",
+        "Evaluasi Model",
+        "Tentang"
+    ]
+)
+
+# ==========================
+# HOME
+# ==========================
+
+if menu=="Home":
+
+    logo = Image.open("logo.png")
+
+    st.image(logo, width=350)
+
+    st.markdown("""
+    <div class="judul">
+    Dashboard Prediksi<br>
+    Status Pinjaman Nasabah
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("""
+    <div class="subjudul">
+    Menggunakan Metode Random Forest
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    #=========================
+    # CARD DESKRIPSI
+    #=========================
+
+    st.markdown("""
+
+    <div class="card">
+
+    <h3>Dashboard Penelitian</h3>
+
+    <p>
+
+    Dashboard ini merupakan media visualisasi yang dikembangkan
+    untuk menampilkan hasil prediksi status pinjaman nasabah
+    menggunakan algoritma Random Forest.
+
+    Dashboard menyajikan informasi penelitian secara interaktif,
+    meliputi ringkasan data, visualisasi,
+    hasil prediksi,
+    serta evaluasi model sehingga mempermudah proses analisis
+    dan interpretasi hasil penelitian.
+
+    </p>
+
+    </div>
+
+    """, unsafe_allow_html=True)
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    st.markdown("""
+    <h2 class='judul2'>
+    Informasi Penelitian
+    </h2>
+    """, unsafe_allow_html=True)
+
+    col1,col2=st.columns(2)
+
+    with col1:
+
+        st.markdown("""
+
+        <div class="info-card">
+
+        <h4>Judul Penelitian</h4>
+
+        <p>
+
+        Prediksi Status Pinjaman Nasabah
+        Menggunakan Algoritma Random Forest
+
+        </p>
+
+        </div>
+
+        """,unsafe_allow_html=True)
+
+        st.markdown("""
+
+        <div class="info-card">
+
+        <h4>Sumber Data</h4>
+
+        <p>
+
+        Dataset diperoleh dari Kaggle.
+
+        </p>
+
+        <a href="https://www.kaggle.com/datasets/ardava/dataset-klasifikasi-status-pinjaman"
+        target="_blank">
+
+        Dataset Klasifikasi Status Pinjaman
+
+        </a>
+
+        </div>
+
+        """,unsafe_allow_html=True)
+
+        st.markdown("""
+
+        <div class="info-card">
+
+        <h4>Fokus Penelitian</h4>
+
+        <p>
+
+        Mengklasifikasikan status pinjaman
+        nasabah berdasarkan data historis
+        menggunakan algoritma Random Forest.
+
+        </p>
+
+        </div>
+
+        """,unsafe_allow_html=True)
+
+    with col2:
+
+        st.markdown("""
+
+        <div class="info-card">
+
+        <h4>Metode</h4>
+
+        <p>
+
+        Random Forest
+
+        </p>
+
+        </div>
+
+        """,unsafe_allow_html=True)
+
+        st.markdown("""
+
+        <div class="info-card">
+
+        <h4>Jumlah Data</h4>
+
+        <p>
+
+        49.700 Data
+
+        </p>
+
+        </div>
+
+        """,unsafe_allow_html=True)
+
+        st.markdown("""
+
+        <div class="info-card">
+
+        <h4>Tujuan Penelitian</h4>
+
+        <p>
+
+        Memprediksi status pinjaman nasabah
+        (Lancar / Tidak Lancar)
+        sehingga dapat membantu
+        proses pengambilan keputusan
+        pemberian pinjaman.
+
+        </p>
+
+        </div>
+
+        """,unsafe_allow_html=True)
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    st.link_button(
+        "Lihat Dataset Kaggle",
+        "https://www.kaggle.com/datasets/ardava/dataset-klasifikasi-status-pinjaman"
+    )
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    st.markdown("""
+    <hr>
+
+    <center>
+
+    Program Studi Sistem Informasi<br>
+
+    Peminatan Business Intelligence
+
+    <br><br>
+
+    2026
+/* =========================================================
+   IMPORT FONT
+=========================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 html, body, [class*="css"]{
-    font-family: 'Poppins', sans-serif;
+    font-family:'Poppins',sans-serif;
 }
 
-/* Background */
+/* =========================================================
+   BACKGROUND
+=========================================================*/
+
 .stApp{
-    background: linear-gradient(to bottom,#f4f8ff,#ffffff);
+
+background:linear-gradient(
+135deg,
+#edf5ff 0%,
+#d9ebff 35%,
+#c6e3ff 100%);
+
 }
 
-/* Hero */
-.hero{
-    background: linear-gradient(135deg,#0B3C91,#1565C0);
-    padding:45px;
-    border-radius:25px;
-    text-align:center;
-    color:white;
-    box-shadow:0px 10px 25px rgba(0,0,0,0.20);
-    animation: fadeIn 1.2s;
+
+/* =========================================================
+   SIDEBAR
+=========================================================*/
+
+section[data-testid="stSidebar"]{
+
+background:#0F4C81;
+
 }
 
-.hero img{
-    width:220px;
+section[data-testid="stSidebar"] *{
+
+color:white;
+
 }
 
-.hero h1{
-    font-size:45px;
-    margin-top:20px;
-    margin-bottom:5px;
+
+/* =========================================================
+   LOGO
+=========================================================*/
+
+img{
+
+display:block;
+margin-left:auto;
+margin-right:auto;
+
 }
 
-.hero h3{
-    color:#d8e8ff;
-    margin-top:0px;
-    font-weight:400;
+
+/* =========================================================
+   JUDUL
+=========================================================*/
+
+.judul{
+
+text-align:center;
+
+font-size:42px;
+
+font-weight:700;
+
+color:#0F4C81;
+
+line-height:55px;
+
+margin-top:10px;
+
 }
 
-.hero p{
-    font-size:18px;
-    line-height:1.8;
-    margin-top:25px;
+
+.subjudul{
+
+text-align:center;
+
+font-size:20px;
+
+color:#555;
+
+margin-bottom:40px;
+
 }
 
-/* Card */
+
+/* =========================================================
+   SUB TITLE
+=========================================================*/
+
+.judul2{
+
+text-align:center;
+
+color:#0F4C81;
+
+font-size:32px;
+
+font-weight:700;
+
+margin-bottom:25px;
+
+}
+
+
+/* =========================================================
+   CARD BESAR
+=========================================================*/
+
 .card{
-    background:white;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0px 8px 18px rgba(0,0,0,0.08);
-    transition:0.4s;
-    height:100%;
+
+background:white;
+
+padding:35px;
+
+border-radius:25px;
+
+box-shadow:
+0px 10px 30px rgba(0,0,0,.10);
+
+transition:.4s;
+
+margin-bottom:30px;
+
 }
+
 
 .card:hover{
-    transform:translateY(-8px);
-    box-shadow:0px 15px 25px rgba(0,0,0,.15);
+
+transform:translateY(-8px);
+
+box-shadow:
+0px 18px 45px rgba(0,0,0,.15);
+
 }
 
-/* Judul */
-.section-title{
-    font-size:32px;
-    font-weight:bold;
-    color:#0B3C91;
-    text-align:center;
-    margin-top:50px;
-    margin-bottom:30px;
+
+.card h3{
+
+text-align:center;
+
+color:#0F4C81;
+
+font-size:28px;
+
+margin-bottom:20px;
+
 }
 
-/* Animasi */
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+
+.card p{
+
+font-size:18px;
+
+line-height:34px;
+
+text-align:justify;
+
+color:#444;
+
 }
 
-</style>
-""", unsafe_allow_html=True)
 
-# =========================
-# HERO
-# =========================
-st.markdown("""
-<div class="hero">
+/* =========================================================
+   INFO CARD
+=========================================================*/
 
-<img src="https://raw.githubusercontent.com/zeafiola-ops/dashboard-prediksi-pinjaman/main/assets/logo.png" width="220">
+.info-card{
 
-<h1>Dashboard Prediksi Status Pinjaman Nasabah</h1>
+background:white;
 
-<h3>Metode Random Forest</h3>
+padding:25px;
 
-<p>
+border-radius:20px;
 
-Dashboard ini merupakan media visualisasi yang dikembangkan untuk
-menampilkan hasil prediksi status pinjaman nasabah menggunakan
-algoritma Random Forest. Dashboard menyajikan informasi penelitian
-secara interaktif, meliputi ringkasan data, hasil prediksi,
-visualisasi, dan evaluasi model sehingga memudahkan proses analisis
-serta interpretasi hasil penelitian.
+margin-bottom:25px;
 
-</p>
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
 
-</div>
+transition:.3s;
 
-""", unsafe_allow_html=True)
+border-left:8px solid #0F4C81;
+
+}
+
+
+.info-card:hover{
+
+transform:scale(1.02);
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.15);
+
+}
+
+
+.info-card h4{
+
+font-size:24px;
+
+color:#0F4C81;
+
+margin-bottom:12px;
+
+}
+
+
+.info-card p{
+
+font-size:17px;
+
+color:#555;
+
+line-height:30px;
+
+}
+
+
+/* =========================================================
+   LINK
+=========================================================*/
+
+.info-card a{
+
+text-decoration:none;
+
+font-size:17px;
+
+font-weight:600;
+
+color:#0077ff;
+
+}
+
+
+.info-card a:hover{
+
+color:#003cff;
+
+}
+
+
+/* =========================================================
+   BUTTON
+=========================================================*/
+
+.stButton>button{
+
+background:#0F4C81;
+
+color:white;
+
+border:none;
+
+padding:14px;
+
+border-radius:12px;
+
+font-size:17px;
+
+font-weight:600;
+
+transition:.3s;
+
+width:100%;
+
+}
+
+
+.stButton>button:hover{
+
+background:#2D74B2;
+
+transform:scale(1.03);
+
+}
+
+
+/* =========================================================
+   FOOTER
+=========================================================*/
+
+hr{
+
+margin-top:40px;
+
+margin-bottom:30px;
+
+}
+
+
+center{
+
+font-size:17px;
+
+color:#666;
+
+line-height:30px;
+
+}
+
+
+/* =========================================================
+   ANIMATION
+=========================================================*/
+
+.card{
+
+animation:fade 1s;
+
+}
+
+.info-card{
+
+animation:fade .8s;
+
+}
+
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0px);
+
+}
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+=========================================================*/
+
+@media(max-width:768px){
+
+.judul{
+
+font-size:30px;
+
+line-height:40px;
+
+}
+
+.subjudul{
+
+font-size:17px;
+
+}
+
+.card p{
+
+font-size:16px;
+
+}
+
+.info-card h4{
+
+font-size:20px;
+
+}
+
+}
+    </center>
+
+    """,unsafe_allow_html=True)
