@@ -87,3 +87,28 @@ footer{visibility:hidden;}
 
 </style>
 """, unsafe_allow_html=True)
+# ==================================================
+# HERO SECTION
+# ==================================================
+
+st.markdown(f"""
+<div class="hero">
+
+<img src="data:image/png;base64,{logo}">
+
+<h1>
+SELAMAT DATANG
+</h1>
+
+<h2>
+Dashboard Prediksi Status Pinjaman Nasabah
+</h2>
+
+<p>
+Menggunakan Algoritma Random Forest
+</p>
+
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown("<br>", unsafe_allow_html=True)
