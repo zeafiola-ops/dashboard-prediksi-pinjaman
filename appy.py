@@ -1,73 +1,117 @@
 import streamlit as st
-import pandas as pd
 from PIL import Image
 
-# ======================================================
+# ==========================================
 # KONFIGURASI
-# ======================================================
+# ==========================================
 
 st.set_page_config(
     page_title="Dashboard Prediksi Status Pinjaman Nasabah",
     page_icon="📊",
-    layout="wide",
-    initial_sidebar_state="expanded"
+    layout="wide"
 )
 
-# ======================================================
-# LOAD DATA
-# ======================================================
-
-df = pd.read_excel("hasil_prediksi_deployment_google_sheets(9).xlsx")
-
-# ======================================================
+# ==========================================
 # LOAD LOGO
-# ======================================================
+# ==========================================
 
 logo = Image.open("logo.png")
 
-# ======================================================
+# ==========================================
 # CSS
-# ======================================================
+# ==========================================
 
 st.markdown("""
 <style>
 
-#MainMenu{visibility:hidden;}
-header{visibility:hidden;}
-footer{visibility:hidden;}
+#MainMenu{
+visibility:hidden;
+}
+
+header{
+visibility:hidden;
+}
+
+footer{
+visibility:hidden;
+}
 
 .stApp{
 
 background:linear-gradient(
 180deg,
-#edf5ff 0%,
-#ffffff 45%,
-#ffffff 100%
+#EAF4FF 0%,
+#F5F9FF 40%,
+#FFFFFF 100%
 );
 
 }
 
 .block-container{
 
-padding-top:2rem;
-padding-left:3rem;
-padding-right:3rem;
-max-width:1300px;
+padding-top:30px;
+max-width:1200px;
 
 }
 
-[data-testid="stSidebar"]{
+.hero{
 
-background:#0B3C78;
+text-align:center;
 
 }
 
-[data-testid="stSidebar"] *{
+.hero img{
 
-color:white;
+width:260px;
+
+}
+
+.hero h1{
+
+font-size:60px;
+color:#0B3C78;
+margin-bottom:5px;
+
+}
+
+.hero h2{
+
+font-size:32px;
+font-weight:700;
+color:#17375E;
+margin-bottom:10px;
+
+}
+
+.hero p{
+
+font-size:22px;
+color:#666;
 
 }
 
 </style>
 
-""",unsafe_allow_html=True)
+""", unsafe_allow_html=True)
+
+# ==========================================
+# HERO
+# ==========================================
+
+st.markdown('<div class="hero">', unsafe_allow_html=True)
+
+st.image(logo, width=260)
+
+st.markdown("""
+<h1>SELAMAT DATANG</h1>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<h2>Dashboard Prediksi Status Pinjaman Nasabah</h2>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<p>Menggunakan Algoritma Random Forest</p>
+""", unsafe_allow_html=True)
+
+st.markdown("</div>", unsafe_allow_html=True)
