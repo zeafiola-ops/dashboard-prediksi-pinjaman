@@ -1,137 +1,89 @@
 import streamlit as st
 from PIL import Image
+import base64
 
-# =====================================
+# ==========================================
 # KONFIGURASI
-# =====================================
+# ==========================================
 
 st.set_page_config(
     page_title="Dashboard Prediksi Status Pinjaman Nasabah",
     page_icon="📊",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
-# =====================================
+# ==========================================
 # LOAD LOGO
-# =====================================
+# ==========================================
 
-logo = Image.open("logo.png")
+def get_base64(file):
+    with open(file, "rb") as f:
+        return base64.b64encode(f.read()).decode()
 
-# =====================================
+logo = get_base64("logo.png")
+
+# ==========================================
 # CSS
-# =====================================
+# ==========================================
 
 st.markdown("""
 <style>
 
-#MainMenu{
-visibility:hidden;
-}
-
-header{
-visibility:hidden;
-}
-
-footer{
-visibility:hidden;
-}
+#MainMenu{visibility:hidden;}
+header{visibility:hidden;}
+footer{visibility:hidden;}
 
 .stApp{
-
-background:linear-gradient(
-180deg,
-#E9F4FF 0%,
-#F8FBFF 45%,
-white 100%
-);
-
+    background:linear-gradient(
+        180deg,
+        #EAF4FF 0%,
+        #F5F9FF 50%,
+        #FFFFFF 100%
+    );
 }
 
 .block-container{
-
-max-width:1300px;
-padding-top:20px;
-
+    max-width:1200px;
+    margin:auto;
+    padding-top:20px;
 }
 
 /* HERO */
 
 .hero{
-
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-padding-top:20px;
-padding-bottom:40px;
-
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px 0;
 }
 
 .hero img{
-
-width:270px;
-display:block;
-margin:auto;
-
+    width:270px;
 }
 
-.hero-title{
-
-font-size:62px;
-font-weight:800;
-color:#083D77;
-margin-top:15px;
-
+.hero h1{
+    color:#0B3C78;
+    font-size:60px;
+    margin-top:20px;
+    margin-bottom:5px;
+    font-weight:800;
 }
 
-.hero-sub{
-
-font-size:38px;
-font-weight:700;
-color:#163D66;
-
+.hero h2{
+    color:#17375E;
+    font-size:34px;
+    margin:0;
+    font-weight:700;
 }
 
-.hero-text{
-
-font-size:24px;
-color:#666;
-
+.hero p{
+    color:#666;
+    font-size:22px;
+    margin-top:10px;
 }
 
 </style>
-
-""",unsafe_allow_html=True)
-# =====================================
-# HERO
-# =====================================
-
-st.markdown('<div class="hero">',unsafe_allow_html=True)
-
-st.image(logo,width=270)
-
-st.markdown("""
-<div class="hero-title">
-
-SELAMAT DATANG
-
-</div>
-""",unsafe_allow_html=True)
-
-st.markdown("""
-<div class="hero-sub">
-
-Dashboard Prediksi Status Pinjaman Nasabah
-
-</div>
-""",unsafe_allow_html=True)
-
-st.markdown("""
-<div class="hero-text">
-
-Menggunakan Algoritma Random Forest
-
-</div>
-""",unsafe_allow_html=True)
-
-st.markdown("</div>",unsafe_allow_html=True)
+""", unsafe_allow_html=True)
