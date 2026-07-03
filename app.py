@@ -1,135 +1,104 @@
 import streamlit as st
 from PIL import Image
 
-# ==================================================
-# KONFIGURASI HALAMAN
-# ==================================================
+# =====================================
+# KONFIGURASI
+# =====================================
 
 st.set_page_config(
     page_title="Dashboard Prediksi Status Pinjaman Nasabah",
     page_icon="📊",
-    layout="wide",
-    initial_sidebar_state="expanded"
+    layout="wide"
 )
 
-# ==================================================
+# =====================================
 # LOAD LOGO
-# ==================================================
+# =====================================
 
 logo = Image.open("logo.png")
 
-# ==================================================
+# =====================================
 # CSS
-# ==================================================
+# =====================================
 
 st.markdown("""
 <style>
 
 #MainMenu{
-    visibility:hidden;
+visibility:hidden;
 }
 
 header{
-    visibility:hidden;
+visibility:hidden;
 }
 
 footer{
-    visibility:hidden;
+visibility:hidden;
 }
 
 .stApp{
 
 background:linear-gradient(
-135deg,
-#dfefff 0%,
-#eef6ff 35%,
-#ffffff 100%
+180deg,
+#E9F4FF 0%,
+#F8FBFF 45%,
+white 100%
 );
 
 }
 
 .block-container{
 
-max-width:1200px;
-padding-top:25px;
+max-width:1300px;
+padding-top:20px;
 
 }
 
+/* HERO */
+
 .hero{
 
-background:white;
-border-radius:25px;
-padding:45px;
-box-shadow:0 8px 30px rgba(0,0,0,.12);
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+padding-top:20px;
+padding-bottom:40px;
 
 }
 
 .hero img{
 
+width:270px;
 display:block;
 margin:auto;
 
 }
 
-.judul{
+.hero-title{
 
-text-align:center;
-font-size:60px;
+font-size:62px;
 font-weight:800;
-color:#0B3C78;
+color:#083D77;
 margin-top:15px;
 
 }
 
-.subjudul{
+.hero-sub{
 
-text-align:center;
-font-size:32px;
+font-size:38px;
 font-weight:700;
-color:#17375E;
-margin-top:5px;
+color:#163D66;
 
 }
 
-.metode{
+.hero-text{
 
-text-align:center;
-font-size:22px;
+font-size:24px;
 color:#666;
-margin-top:12px;
 
 }
 
 </style>
-""", unsafe_allow_html=True)
 
-# ==================================================
-# HERO
-# ==================================================
-
-st.markdown('<div class="hero">', unsafe_allow_html=True)
-
-col1, col2, col3 = st.columns([1,2,1])
-
-with col2:
-    st.image(logo, width=280)
-
-st.markdown("""
-<div class="judul">
-SELAMAT DATANG
-</div>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-<div class="subjudul">
-Dashboard Prediksi Status Pinjaman Nasabah
-</div>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-<div class="metode">
-Menggunakan Algoritma Random Forest
-</div>
-""", unsafe_allow_html=True)
-
-st.markdown("</div>", unsafe_allow_html=True)
+""",unsafe_allow_html=True)
