@@ -22,7 +22,23 @@ def get_base64(file):
         return base64.b64encode(f.read()).decode()
 
 logo = get_base64("logo.png")
+st.markdown(f"""
+<div class="hero">
 
+<img src="data:image/png;base64,{logo}">
+
+<h1>
+Dashboard Prediksi<br>
+Random Forest
+</h1>
+
+<p>
+Prediksi Status Pinjaman Nasabah
+</p>
+
+</div>
+
+""",unsafe_allow_html=True)
 # ==========================================================
 # CSS
 # ==========================================================
