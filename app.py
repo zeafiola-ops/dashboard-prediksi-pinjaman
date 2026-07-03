@@ -1,200 +1,162 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
 
-# =========================
-# KONFIGURASI
-# =========================
+# ==========================
+# KONFIGURASI HALAMAN
+# ==========================
 st.set_page_config(
     page_title="Dashboard Prediksi Status Pinjaman",
     page_icon="💳",
     layout="wide"
 )
 
-# =========================
+# ==========================
+# MEMBACA DATA
+# ==========================
+df = pd.read_excel("hasil_prediksi_deployment_google_sheets.xlsx")
+
+# ==========================
 # CSS
-# =========================
+# ==========================
 st.markdown("""
 <style>
 
-.main{
-    background-color:#f5f7fb;
+.stApp{
+    background-color:#F5F7FA;
 }
 
-.block-container{
-    padding-top:1rem;
+.title{
+    font-size:42px;
+    font-weight:bold;
+    color:#0B5394;
 }
 
-.metric-card{
+.sub{
+    font-size:20px;
+    color:#555555;
+}
+
+.card{
     background:white;
-    padding:15px;
+    padding:25px;
     border-radius:15px;
-    box-shadow:0px 4px 10px rgba(0,0,0,0.1);
+    box-shadow:0px 4px 12px rgba(0,0,0,0.1);
 }
 
 </style>
 """,unsafe_allow_html=True)
 
-# =========================
-# LOAD DATA
-# =========================
-
-df = pd.read_excel("hasil_prediksi_deployment_google_sheets.xlsx")
-
-# =========================
+# ==========================
 # SIDEBAR
-# =========================
+# ==========================
 
 st.sidebar.image(
-"https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+"https://cdn-icons-png.flaticon.com/512/2830/2830284.png",
 width=120
 )
 
+st.sidebar.title("MENU")
+
 menu = st.sidebar.radio(
-"Menu",
+"",
 [
 "🏠 Home",
 "📊 Dashboard",
-"📋 Dataset"
+"📈 Evaluasi Model",
+"📋 Dataset",
+"👨‍🎓 Tentang"
 ]
 )
 
-# =========================
+# ==========================
 # HOME
-# =========================
+# ==========================
 
 if menu=="🏠 Home":
 
-    st.title("💳 Dashboard Prediksi Status Pinjaman Nasabah")
-
-    st.write("""
-Dashboard ini digunakan untuk menampilkan hasil prediksi status pinjaman
-menggunakan algoritma **Random Forest**.
-""")
-
-    st.markdown("---")
-
-    c1,c2,c3,c4=st.columns(4)
-
-    c1.metric(
-        "Jumlah Data",
-        len(df)
-    )
-
-    lancar=len(df[df["status_prediksi"]==1])
-
-    tidak=len(df[df["status_prediksi"]==0])
-
-    c2.metric(
-        "Prediksi Lancar",
-        lancar
-    )
-
-    c3.metric(
-        "Prediksi Tidak Lancar",
-        tidak
-    )
-
-    akurasi=(
-        (df["status_aktual"]==df["status_prediksi"]).mean()*100
-    )
-
-    c4.metric(
-        "Akurasi",
-        f"{akurasi:.2f}%"
-    )
-
-    st.success("Model Random Forest berhasil digunakan untuk melakukan prediksi.")
-
-# =========================
-# DASHBOARD
-# =========================
-
-if menu=="📊 Dashboard":
-
-    st.title("📊 Dashboard Visualisasi")
-
-    col1,col2=st.columns(2)
+    col1,col2=st.columns([1,3])
 
     with col1:
 
-        pie=df["status_prediksi"].value_counts()
-
-        fig=px.pie(
-            values=pie.values,
-            names=["Tidak Lancar","Lancar"],
-            title="Distribusi Status Prediksi",
-            hole=0.45
+        st.image(
+        "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+        width=180
         )
-
-        st.plotly_chart(fig,use_container_width=True)
 
     with col2:
 
-        fig2=px.histogram(
-            df,
-            x="usia",
-            title="Distribusi Usia Nasabah"
+        st.markdown(
+        "<p class='title'>Dashboard Prediksi Status Pinjaman Nasabah</p>",
+        unsafe_allow_html=True
         )
 
-        st.plotly_chart(fig2,use_container_width=True)
+        st.markdown(
+        "<p class='sub'>Menggunakan Algoritma Random Forest</p>",
+        unsafe_allow_html=True
+        )
+
+        st.write("""
+
+Dashboard ini dibuat untuk membantu
+menampilkan hasil prediksi status pinjaman
+nasabah menggunakan algoritma Random Forest.
+
+Dashboard menyajikan informasi berupa
+ringkasan data, visualisasi hasil prediksi,
+evaluasi model, serta dataset hasil prediksi.
+
+        """)
 
     st.markdown("---")
 
-    col3,col4=st.columns(2)
+    st.subheader("📖 Informasi Penelitian")
 
-    with col3:
+    st.info("""
 
-        fig3=px.scatter(
-            df,
-            x="pendapatan_tahunan",
-            y="jumlah_pinjaman",
-            color="status_prediksi",
-            title="Pendapatan vs Jumlah Pinjaman"
-        )
+**Judul Skripsi**
 
-        st.plotly_chart(fig3,use_container_width=True)
+Prediksi Status Pinjaman Nasabah
+Menggunakan Algoritma Random Forest
 
-    with col4:
+**Metode**
 
-        fig4=px.box(
-            df,
-            y="suku_bunga",
-            title="Distribusi Suku Bunga"
-        )
+Random Forest
 
-        st.plotly_chart(fig4,use_container_width=True)
+**Dataset**
 
-# =========================
-# DATASET
-# =========================
+Dataset Kredit Nasabah
 
-if menu=="📋 Dataset":
+**Tujuan**
 
-    st.title("📋 Dataset")
+Memprediksi status pinjaman nasabah
+agar dapat membantu proses analisis
+kelayakan pemberian kredit.
 
-    status=st.selectbox(
-        "Filter Status Prediksi",
-        ["Semua","Lancar","Tidak Lancar"]
-    )
+    """)
 
-    if status=="Lancar":
-        tampil=df[df["status_prediksi"]==1]
+    st.markdown("---")
 
-    elif status=="Tidak Lancar":
-        tampil=df[df["status_prediksi"]==0]
+    st.subheader("🎯 Tujuan Dashboard")
 
-    else:
-        tampil=df
+    c1,c2,c3=st.columns(3)
 
-    st.dataframe(
-        tampil,
-        use_container_width=True
-    )
+    with c1:
 
-    st.download_button(
-        "📥 Download Dataset",
-        data=tampil.to_csv(index=False),
-        file_name="hasil_prediksi.csv",
-        mime="text/csv"
-    )
+        st.success("""
+📊 Menampilkan
+ringkasan hasil prediksi
+""")
+
+    with c2:
+
+        st.success("""
+📈 Menampilkan
+visualisasi data
+""")
+
+    with c3:
+
+        st.success("""
+🤖 Menampilkan
+evaluasi Random Forest
+""")
