@@ -1,162 +1,125 @@
 import streamlit as st
-import pandas as pd
 
-# ==========================
+# =========================
 # KONFIGURASI HALAMAN
-# ==========================
+# =========================
 st.set_page_config(
-    page_title="Dashboard Prediksi Status Pinjaman",
-    page_icon="💳",
+    page_title="Dashboard Prediksi Status Pinjaman Nasabah",
+    page_icon="📊",
     layout="wide"
 )
 
-# ==========================
-# MEMBACA DATA
-# ==========================
-df = pd.read_excel("hasil_prediksi_deployment_google_sheets.xlsx")
-
-# ==========================
+# =========================
 # CSS
-# ==========================
+# =========================
 st.markdown("""
 <style>
 
+html, body, [class*="css"]{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background */
 .stApp{
-    background-color:#F5F7FA;
+    background: linear-gradient(to bottom,#f4f8ff,#ffffff);
 }
 
-.title{
-    font-size:42px;
-    font-weight:bold;
-    color:#0B5394;
+/* Hero */
+.hero{
+    background: linear-gradient(135deg,#0B3C91,#1565C0);
+    padding:45px;
+    border-radius:25px;
+    text-align:center;
+    color:white;
+    box-shadow:0px 10px 25px rgba(0,0,0,0.20);
+    animation: fadeIn 1.2s;
 }
 
-.sub{
-    font-size:20px;
-    color:#555555;
+.hero img{
+    width:220px;
 }
 
+.hero h1{
+    font-size:45px;
+    margin-top:20px;
+    margin-bottom:5px;
+}
+
+.hero h3{
+    color:#d8e8ff;
+    margin-top:0px;
+    font-weight:400;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.8;
+    margin-top:25px;
+}
+
+/* Card */
 .card{
     background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0px 4px 12px rgba(0,0,0,0.1);
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0px 8px 18px rgba(0,0,0,0.08);
+    transition:0.4s;
+    height:100%;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0px 15px 25px rgba(0,0,0,.15);
+}
+
+/* Judul */
+.section-title{
+    font-size:32px;
+    font-weight:bold;
+    color:#0B3C91;
+    text-align:center;
+    margin-top:50px;
+    margin-bottom:30px;
+}
+
+/* Animasi */
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 </style>
-""",unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
-# ==========================
-# SIDEBAR
-# ==========================
+# =========================
+# HERO
+# =========================
+st.markdown("""
+<div class="hero">
 
-st.sidebar.image(
-"https://cdn-icons-png.flaticon.com/512/2830/2830284.png",
-width=120
-)
+<img src="https://raw.githubusercontent.com/zeafiola-ops/dashboard-prediksi-pinjaman/main/assets/logo.png" width="220">
 
-st.sidebar.title("MENU")
+<h1>Dashboard Prediksi Status Pinjaman Nasabah</h1>
 
-menu = st.sidebar.radio(
-"",
-[
-"🏠 Home",
-"📊 Dashboard",
-"📈 Evaluasi Model",
-"📋 Dataset",
-"👨‍🎓 Tentang"
-]
-)
+<h3>Metode Random Forest</h3>
 
-# ==========================
-# HOME
-# ==========================
+<p>
 
-if menu=="🏠 Home":
+Dashboard ini merupakan media visualisasi yang dikembangkan untuk
+menampilkan hasil prediksi status pinjaman nasabah menggunakan
+algoritma Random Forest. Dashboard menyajikan informasi penelitian
+secara interaktif, meliputi ringkasan data, hasil prediksi,
+visualisasi, dan evaluasi model sehingga memudahkan proses analisis
+serta interpretasi hasil penelitian.
 
-    col1,col2=st.columns([1,3])
+</p>
 
-    with col1:
+</div>
 
-        st.image(
-        "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-        width=180
-        )
-
-    with col2:
-
-        st.markdown(
-        "<p class='title'>Dashboard Prediksi Status Pinjaman Nasabah</p>",
-        unsafe_allow_html=True
-        )
-
-        st.markdown(
-        "<p class='sub'>Menggunakan Algoritma Random Forest</p>",
-        unsafe_allow_html=True
-        )
-
-        st.write("""
-
-Dashboard ini dibuat untuk membantu
-menampilkan hasil prediksi status pinjaman
-nasabah menggunakan algoritma Random Forest.
-
-Dashboard menyajikan informasi berupa
-ringkasan data, visualisasi hasil prediksi,
-evaluasi model, serta dataset hasil prediksi.
-
-        """)
-
-    st.markdown("---")
-
-    st.subheader("📖 Informasi Penelitian")
-
-    st.info("""
-
-**Judul Skripsi**
-
-Prediksi Status Pinjaman Nasabah
-Menggunakan Algoritma Random Forest
-
-**Metode**
-
-Random Forest
-
-**Dataset**
-
-Dataset Kredit Nasabah
-
-**Tujuan**
-
-Memprediksi status pinjaman nasabah
-agar dapat membantu proses analisis
-kelayakan pemberian kredit.
-
-    """)
-
-    st.markdown("---")
-
-    st.subheader("🎯 Tujuan Dashboard")
-
-    c1,c2,c3=st.columns(3)
-
-    with c1:
-
-        st.success("""
-📊 Menampilkan
-ringkasan hasil prediksi
-""")
-
-    with c2:
-
-        st.success("""
-📈 Menampilkan
-visualisasi data
-""")
-
-    with c3:
-
-        st.success("""
-🤖 Menampilkan
-evaluasi Random Forest
-""")
+""", unsafe_allow_html=True)
