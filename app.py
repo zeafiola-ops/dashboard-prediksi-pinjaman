@@ -46,10 +46,15 @@ if menu=="Home":
 
     logo = Image.open("logo.png")
 
-   col1, col2, col3 = st.columns([1,2,1])
+st.markdown("""
+<div style="text-align:center;">
+""", unsafe_allow_html=True)
 
-with col2:
-    st.image(logo, width=320)
+st.image(logo, width=320)
+
+st.markdown("""
+</div>
+""", unsafe_allow_html=True)
     st.markdown("""
     <div class="judul">
     Dashboard Prediksi<br>
