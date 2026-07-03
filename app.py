@@ -28,12 +28,12 @@ st.markdown(f"""
 <img src="data:image/png;base64,{logo}">
 
 <h1>
-Dashboard Prediksi<br>
-Random Forest
+SELAMAT DATANG<br>
+Visualisasi Prediksi Status Pinjaman Nasabah 
 </h1>
 
 <p>
-Prediksi Status Pinjaman Nasabah
+Rendom forest
 </p>
 
 </div>
