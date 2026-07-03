@@ -177,3 +177,40 @@ font-size:18px;
 </style>
 
 """, unsafe_allow_html=True)
+# ==================================================
+# DASHBOARD PENELITIAN
+# ==================================================
+
+st.markdown("""
+<div class="dashboard-card">
+
+<div class="dashboard-icon">
+📊
+</div>
+
+<div class="dashboard-content">
+
+<h2>Dashboard Penelitian</h2>
+
+<p>
+Dashboard Prediksi Status Pinjaman Nasabah merupakan media visualisasi interaktif
+yang dikembangkan sebagai implementasi hasil penelitian menggunakan algoritma
+<b>Random Forest</b>. Dashboard ini bertujuan untuk menyajikan informasi hasil
+prediksi secara lebih mudah dipahami melalui tampilan yang informatif, modern,
+dan interaktif.
+
+<br><br>
+
+Melalui dashboard ini, pengguna dapat melihat ringkasan jumlah data nasabah,
+jumlah status pinjaman <b>Lancar</b> dan <b>Tidak Lancar</b>, nilai akurasi model,
+serta berbagai visualisasi seperti diagram lingkaran, diagram batang,
+histogram distribusi pinjaman, dan tabel data hasil prediksi. Informasi tersebut
+diharapkan dapat membantu proses analisis, evaluasi model, serta mendukung
+pengambilan keputusan dalam menilai status pinjaman nasabah.
+
+</p>
+
+</div>
+
+</div>
+""", unsafe_allow_html=True)
