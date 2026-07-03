@@ -191,7 +191,65 @@ st.markdown("""
 Dashboard ini menyajikan hasil prediksi status pinjaman nasabah <br>
    menggunakan algoritma Random Forest secara interaktif.
 </p>
-""", unsafe_allow_html=True)
 
+""", unsafe_allow_html=True)
+st.markdown("""
+<div class="dashboard-card">
+
+<div class="dashboard-icon">
+📊
+</div>
+
+<div class="dashboard-text">
+
+<b>Dashboard ini merupakan media visualisasi yang dikembangkan untuk
+menampilkan hasil prediksi status pinjaman nasabah menggunakan metode
+Random Forest.</b>
+
+<br><br>
+
+Dashboard menyajikan informasi penelitian secara interaktif,
+meliputi ringkasan data, hasil prediksi, visualisasi,
+dan evaluasi model sehingga memudahkan proses analisis
+serta interpretasi hasil penelitian.
+
+</div>
+
+</div>
+""", unsafe_allow_html=True)
+/* =========================
+   CARD DASHBOARD
+========================= */
+
+.dashboard-card{
+    background:white;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+    display:flex;
+    align-items:center;
+    gap:25px;
+    margin-top:30px;
+    margin-bottom:40px;
+}
+
+.dashboard-icon{
+    width:90px;
+    height:90px;
+    background:#0B3C78;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:42px;
+    flex-shrink:0;
+}
+
+.dashboard-text{
+    color:#333;
+    font-size:18px;
+    line-height:1.8;
+}
 st.write("")
 st.write("")
