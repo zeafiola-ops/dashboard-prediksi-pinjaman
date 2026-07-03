@@ -139,3 +139,79 @@ color:#666;
 """,unsafe_allow_html=True)
 </style>
 """, unsafe_allow_html=True)
+/* ===========================
+   INFO PENELITIAN
+=========================== */
+
+.info-title{
+
+    text-align:center;
+
+    font-size:42px;
+
+    font-weight:700;
+
+    color:#0B3C78;
+
+    margin-top:60px;
+
+    margin-bottom:30px;
+
+}
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+    width:90%;
+
+    margin:auto;
+
+}
+
+.info-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+
+    transition:all .3s ease;
+
+    border-top:5px solid #0B3C78;
+
+}
+
+.info-card:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+
+}
+
+.info-card h3{
+
+    color:#0B3C78;
+
+    margin-bottom:12px;
+
+}
+
+.info-card p{
+
+    color:#444;
+
+    line-height:1.8;
+
+}
+
+
+
