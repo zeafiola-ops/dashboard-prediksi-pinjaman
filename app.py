@@ -102,3 +102,36 @@ color:#666;
 </style>
 
 """,unsafe_allow_html=True)
+# =====================================
+# HERO
+# =====================================
+
+st.markdown('<div class="hero">',unsafe_allow_html=True)
+
+st.image(logo,width=270)
+
+st.markdown("""
+<div class="hero-title">
+
+SELAMAT DATANG
+
+</div>
+""",unsafe_allow_html=True)
+
+st.markdown("""
+<div class="hero-sub">
+
+Dashboard Prediksi Status Pinjaman Nasabah
+
+</div>
+""",unsafe_allow_html=True)
+
+st.markdown("""
+<div class="hero-text">
+
+Menggunakan Algoritma Random Forest
+
+</div>
+""",unsafe_allow_html=True)
+
+st.markdown("</div>",unsafe_allow_html=True)
