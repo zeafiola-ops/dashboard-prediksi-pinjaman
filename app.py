@@ -182,7 +182,7 @@ st.markdown(f"""
 st.markdown("""
 <h1 class="title">
  Selamat Datang<br>
-          Yuk Belajar Bersama
+
 </h1>
 """, unsafe_allow_html=True)
 
