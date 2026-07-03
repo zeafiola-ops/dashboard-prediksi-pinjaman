@@ -31,8 +31,8 @@ st.markdown(f"""
 SELAMAT DATANG
 </h1>
 
-<p>
-Visualisasi Prediksi Status Pinjaman Nasabah <b>
+<p> <b>
+Visualisasi Prediksi Status Pinjaman Nasabah 
 Random Forest
 </p>
 
@@ -137,3 +137,80 @@ color:#666;
 </style>
 
 """,unsafe_allow_html=True)
+/* =========================
+CARD DASHBOARD
+========================= */
+
+.dashboard-card{
+
+width:92%;
+
+margin:auto;
+
+background:white;
+
+border-radius:22px;
+
+padding:30px;
+
+box-shadow:0px 10px 30px rgba(0,0,0,.12);
+
+display:flex;
+
+align-items:center;
+
+gap:30px;
+
+margin-top:20px;
+
+margin-bottom:45px;
+
+transition:.3s;
+
+}
+
+.dashboard-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0px 18px 40px rgba(0,0,0,.18);
+
+}
+
+.dashboard-icon{
+
+width:90px;
+
+height:90px;
+
+background:#0B3C78;
+
+border-radius:18px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-shrink:0;
+
+}
+
+.dashboard-icon img{
+
+width:48px;
+
+}
+
+.dashboard-text{
+
+font-size:18px;
+
+line-height:1.8;
+
+color:#333;
+
+text-align:justify;
+
+}
