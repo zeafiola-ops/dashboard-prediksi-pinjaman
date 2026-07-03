@@ -181,15 +181,15 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 st.markdown("""
 <h1 class="title">
-Selamat Datang<br>
-Yuk Belajar Bersama
+ Selamat Datang<br>
+    Yuk Belajar Bersama
 </h1>
 """, unsafe_allow_html=True)
 
 st.markdown("""
 <p class="subtitle">
 Dashboard ini menyajikan hasil prediksi status pinjaman nasabah <br>
-menggunakan algoritma Random Forest secara interaktif.
+   menggunakan algoritma Random Forest secara interaktif.
 </p>
 """, unsafe_allow_html=True)
 
