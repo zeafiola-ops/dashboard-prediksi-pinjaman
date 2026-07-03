@@ -45,13 +45,35 @@ color:white;
 
 }
 
-/* Logo */
+/* =======================
+   LOGO
+======================= */
+
+.logo-container{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+width:100%;
+
+margin-top:20px;
+
+margin-bottom:20px;
+
+}
 
 .logo{
 
-text-align:center;
+display:block;
 
-margin-top:20px;
+width:320px;
+
+height:auto;
+
+margin:0 auto;
 
 }
 
