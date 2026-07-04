@@ -150,6 +150,46 @@ st.markdown("""
         </p>
 
     </div>
-
 </div>
 """, unsafe_allow_html=True)
+.dashboard-card{
+    display:flex;
+    align-items:flex-start;
+    gap:25px;
+    background:white;
+    padding:30px;
+    margin-top:35px;
+    border-radius:22px;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+}
+
+.dashboard-icon{
+    width:90px;
+    height:90px;
+    background:#0B3C78;
+    border-radius:18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-shrink:0;
+    color:white;
+}
+
+.dashboard-icon i{
+    font-size:42px;
+}
+
+.dashboard-content{
+    flex:1;
+}
+
+.dashboard-content h2{
+    color:#0B3C78;
+    margin-bottom:15px;
+}
+
+.dashboard-content p{
+    font-size:18px;
+    line-height:1.8;
+    text-align:justify;
+} unsafe_allow_html=True)
