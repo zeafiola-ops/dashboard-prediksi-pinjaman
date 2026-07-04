@@ -12,7 +12,14 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
+# ==========================================
+# BOOTSTRAP ICON
+# ==========================================
 
+st.markdown("""
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+""", unsafe_allow_html=True)
 # ==========================================
 # LOAD LOGO
 # ==========================================
@@ -185,9 +192,8 @@ st.markdown("""
 <div class="dashboard-card">
 
 <div class="dashboard-icon">
-📊
+<i class="bi bi-bar-chart-fill"></i>
 </div>
-
 <div class="dashboard-content">
 
 <h2>Dashboard Penelitian</h2>
