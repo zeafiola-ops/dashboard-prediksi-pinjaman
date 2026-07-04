@@ -120,11 +120,10 @@ Menggunakan Algoritma Random Forest
 
 st.markdown("<br>", unsafe_allow_html=True)
 
+st.markdown("""
 /* ==============================
    DASHBOARD PENELITIAN
 ============================== */
-
-st.markdown("""
 <div class="dashboard-card">
 
     <div class="dashboard-icon">
