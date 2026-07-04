@@ -1,5 +1,11 @@
 streamlit
 pandas
+numpy
 plotly
+matplotlib
+scikit-learn
+joblib
 openpyxl
-pillow
+Pillow
+streamlit-option-menu
+streamlit-extras
