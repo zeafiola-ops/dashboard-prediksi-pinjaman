@@ -119,15 +119,7 @@ Menggunakan Algoritma Random Forest
 """, unsafe_allow_html=True)
 
 st.markdown("<br>", unsafe_allow_html=True)
-st.markdown("""
-<style>
 
-#MainMenu{visibility:hidden;}
-header{visibility:hidden;}
-footer{visibility:hidden;}
-e)line 166
-
-""", unsafe_allow_html=True)
 # ==================================================
 # DASHBOARD PENELITIAN
 # ==================================================
