@@ -125,7 +125,9 @@ st.markdown("""
 #MainMenu{visibility:hidden;}
 header{visibility:hidden;}
 footer{visibility:hidden;}
-e)
+e)line 166
+
+""", unsafe_allow_html=True)
 # ==================================================
 # DASHBOARD PENELITIAN
 # ==================================================
