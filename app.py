@@ -124,79 +124,44 @@ st.markdown("<br>", unsafe_allow_html=True)
    DASHBOARD PENELITIAN
 ============================== */
 
-.dashboard-card{
+st.markdown("""
+<div class="dashboard-card">
 
-display:flex;
-align-items:flex-start;
-gap:30px;
+    <div class="dashboard-icon">
+        <i class="bi bi-diagram-3-fill"></i>
+    </div>
 
-background:white;
+    <div class="dashboard-content">
 
-padding:35px;
+        <h2>Dashboard Penelitian</h2>
 
-margin-top:35px;
-margin-bottom:35px;
+        <p>
+        Dashboard Prediksi Status Pinjaman Nasabah merupakan media visualisasi
+        interaktif yang dikembangkan sebagai implementasi penelitian mengenai
+        prediksi status pinjaman nasabah menggunakan algoritma
+        <b>Random Forest</b>. Dashboard ini dirancang untuk menyajikan hasil
+        analisis secara informatif sehingga memudahkan pengguna dalam memahami
+        pola data, hasil prediksi, serta performa model yang telah dibangun.
+        </p>
 
-border-radius:20px;
+        <p>
+        Informasi yang disajikan meliputi ringkasan jumlah data nasabah,
+        distribusi status pinjaman, visualisasi hasil prediksi dalam bentuk
+        diagram lingkaran (Pie Chart), diagram batang (Bar Chart),
+        histogram distribusi jumlah pinjaman, serta tabel hasil prediksi.
+        Selain itu, dashboard juga menampilkan hasil evaluasi model sebagai
+        bahan analisis terhadap tingkat kinerja algoritma Random Forest
+        dalam mengklasifikasikan status pinjaman nasabah.
+        </p>
 
-box-shadow:0 10px 30px rgba(0,0,0,.12);
+        <p>
+        Dengan adanya dashboard ini, pengguna dapat melakukan analisis data
+        secara lebih cepat, interaktif, dan mudah dipahami sehingga dapat
+        mendukung proses pengambilan keputusan berdasarkan hasil prediksi
+        yang dihasilkan oleh model machine learning.
+        </p>
 
-transition:.35s;
+    </div>
 
-}
-
-.dashboard-card:hover{
-
-transform:translateY(-8px);
-
-box-shadow:0 20px 40px rgba(0,0,0,.18);
-
-}
-
-.dashboard-icon{
-
-width:90px;
-height:90px;
-
-background:#0B3C78;
-
-border-radius:20px;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-flex-shrink:0;
-
-}
-
-.dashboard-icon i{
-
-font-size:42px;
-color:white;
-
-}
-
-.dashboard-content{
-
-flex:1;
-
-}
-
-.dashboard-content h2{
-
-color:#0B3C78;
-font-size:34px;
-font-weight:700;
-margin-bottom:15px;
-
-}
-
-.dashboard-content p{
-
-font-size:18px;
-line-height:1.9;
-text-align:justify;
-color:#444;
-
-}
+</div>
+""", unsafe_allow_html=True)
