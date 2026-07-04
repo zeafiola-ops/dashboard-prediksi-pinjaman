@@ -118,12 +118,11 @@ Menggunakan Algoritma Random Forest
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown("<br>", unsafe_allow_html=True)
-
+st.markdown("<br>", </style> unsafe_allow_html=True)
+# ==========================================
+# DASHBOARD PENELITIAN
+# ==========================================
 st.markdown("""
-/* ==============================
-   DASHBOARD PENELITIAN
-============================== */
 <div class="dashboard-card">
 
     <div class="dashboard-icon">
@@ -161,6 +160,6 @@ st.markdown("""
         </p>
 
     </div>
-
 </div>
-""", unsafe_allow_html=True)
+unsafe_allow_html=True""", unsafe_allow_html=True)
+unsafe_allow_html=True
