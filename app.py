@@ -120,76 +120,83 @@ Menggunakan Algoritma Random Forest
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-# ==================================================
-# DASHBOARD PENELITIAN
-# ==================================================
+/* ==============================
+   DASHBOARD PENELITIAN
+============================== */
 
-st.markdown("""
-<div class="dashboard-card">
-
-    <div class="dashboard-icon">
-        <i class="bi bi-diagram-3-fill"></i>
-    </div>
-
-    <div class="dashboard-content">
-
-        <h2>Dashboard Penelitian</h2>
-
-        <p>
-        Dashboard Prediksi Status Pinjaman Nasabah merupakan media visualisasi interaktif
-        yang dikembangkan sebagai implementasi hasil penelitian menggunakan algoritma
-        <b>Random Forest</b>. Dashboard ini bertujuan untuk menyajikan hasil prediksi
-        secara informatif, menarik, dan mudah dipahami oleh pengguna.
-        </p>
-
-        <p>
-        Melalui dashboard ini, pengguna dapat melihat ringkasan jumlah data,
-        status pinjaman <b>Lancar</b> dan <b>Tidak Lancar</b>, nilai akurasi model,
-        visualisasi berupa diagram lingkaran, diagram batang, histogram distribusi,
-        serta tabel hasil prediksi sehingga memudahkan proses analisis.
-        </p>
-
-    </div>
-</div>
-""", unsafe_allow_html=True)
 .dashboard-card{
-    display:flex;
-    align-items:flex-start;
-    gap:25px;
-    background:white;
-    padding:30px;
-    margin-top:35px;
-    border-radius:22px;
-    box-shadow:0 8px 25px rgba(0,0,0,.12);
+
+display:flex;
+align-items:flex-start;
+gap:30px;
+
+background:white;
+
+padding:35px;
+
+margin-top:35px;
+margin-bottom:35px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+transition:.35s;
+
+}
+
+.dashboard-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 20px 40px rgba(0,0,0,.18);
+
 }
 
 .dashboard-icon{
-    width:90px;
-    height:90px;
-    background:#0B3C78;
-    border-radius:18px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-shrink:0;
-    color:white;
+
+width:90px;
+height:90px;
+
+background:#0B3C78;
+
+border-radius:20px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+flex-shrink:0;
+
 }
 
 .dashboard-icon i{
-    font-size:42px;
+
+font-size:42px;
+color:white;
+
 }
 
 .dashboard-content{
-    flex:1;
+
+flex:1;
+
 }
 
 .dashboard-content h2{
-    color:#0B3C78;
-    margin-bottom:15px;
+
+color:#0B3C78;
+font-size:34px;
+font-weight:700;
+margin-bottom:15px;
+
 }
 
 .dashboard-content p{
-    font-size:18px;
-    line-height:1.8;
-    text-align:justify;
-} unsafe_allow_html=True)
+
+font-size:18px;
+line-height:1.9;
+text-align:justify;
+color:#444;
+
+}
