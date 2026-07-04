@@ -125,6 +125,7 @@ st.markdown("""
 #MainMenu{visibility:hidden;}
 header{visibility:hidden;}
 footer{visibility:hidden;}
+e)
 # ==================================================
 # DASHBOARD PENELITIAN
 # ==================================================
@@ -163,6 +164,7 @@ st.markdown("""
 
 </div>
 """, unsafe_allow_html=True)
-</div
 
-""", unsafe_allow_html=True)
+
+
+
